@@ -12,12 +12,15 @@ Before starting, need to install the packages under console
 ### Typical file structure
 ```
 ./app
-	/css
 	/fonts
+		*.ttf or *.otf
 	/icons
+		*.svg
 	/images
 	/js
 	/scss
+		*.scss
+		
 	index.html
 	
 gulpfile.js
