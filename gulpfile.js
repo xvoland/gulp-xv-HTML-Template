@@ -1,5 +1,17 @@
 "use strict";
 
+/* Gulp-HTML-Template */
+/*!
+* gulpfile.js
+*
+* Copyright 2021, Vitalii Tereshchuk https://dotoca.com
+* Released under the MIT license
+* Github https://github.com/xvoland/Gulp-HTML-Template
+*
+* Date: May 20, 2021
+*/
+
+
 let project_folder = require("path").basename(__dirname);   // "./dist";
 let source_folder  = "./app";
 
@@ -51,12 +63,9 @@ let { src, dest } = require("gulp"),
     notify = require("gulp-notify"),
     concat = require("gulp-concat");
 
-// Directories
-const PATHS = {
-  css: "css",
-};
 
 
+/* live Browser */
 function browserSync(params) {
     browsersync.init({
         server:{
@@ -163,75 +172,17 @@ function fonts(params) {
 
 async function css_console() {
   var result = sass.renderSync({
-    file: "./app/scss/style.scss",
+    file: path.src.css,
     outputStyle: "compressed",
-    outFile: "./app/css/all.css",
+    outFile: path.build."all.css",
   });
 
   console.log(result.css.toString());
 }
 
-async function css_dart() {
-  console.log(sass.info);
-
-  sass.render(
-    {
-      file: "app/scss/style.scss",
-      outputStyle: "compressed",
-      sourceMap: true,
-      outFile: "app/scss/style.scss",
-    },
-    function (error, result) {
-      // node-style callback from v3.0.0 onwards
-      if (!error) {
-        console.log("Start re/write file...");
-
-        const fs = require("fs");
-
-        // No errors during the compilation, write this result on the disk
-        fs.writeFile("app/css/style.min.css", result.css, function (err) {
-          if (!err) {
-            //file written on disk
-            console.log("Done.");
-          }
-        });
-      }
-    }
-  );
-}
 
 
-
-function minify() {
-  var minify = require("gulp-minifier");
-
-  console.log("CSS minify() optimization...");
-
-  return gulp
-    .src("./app/css/**/*.css")
-    .pipe(
-      minify({
-        minify: true,
-        minifyHTML: {
-          collapseWhitespace: true,
-          conservativeCollapse: true,
-        },
-        minifyJS: {
-          sourceMap: true,
-        },
-        minifyCSS: true,
-        getKeptComment: function (content, filePath) {
-          var m = content.match(/\/\*![\s\S]*?\*\//gim);
-          return (m && m.join("\n") + "\n") || "";
-        },
-      })
-    )
-    .pipe(autoprefixer("last 2 version", "safari 5", "ie 8", "ie 9"))
-    .pipe(concat("style.min.css"))
-    .pipe(gulp.dest("dist/css"));
-}
-
-
+/* add fonts from folder to SCSS file */
 async function fontsCSS(params) {
     let file_content = fs.readFileSync(source_folder + '/scss/fonts.scss');
 
@@ -259,7 +210,6 @@ async function fontsCSS(params) {
 
 
 function cb() {
-
 }
 
 
@@ -271,7 +221,7 @@ function watchFiles(param) {
 }
 
 
-
+/* processing of SVG files for create sprite */
 gulp.task("svgSprite", function(){
     return gulp.src([source_folder + '/icons/*.svg'])
         .pipe(svg_sprite({
@@ -285,7 +235,7 @@ gulp.task("svgSprite", function(){
 })
 
 
-
+/* processing of OTF to TTF files */
 gulp.task("otf2ttf", function(){
     return gulp.src([source_folder + '/fonts/*.otf'])
         .pipe(fonter({
@@ -295,9 +245,11 @@ gulp.task("otf2ttf", function(){
         )
 })
 
-// build
+
+// background build
 let build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts));
 let watch = gulp.parallel(build, watchFiles, browserSync);
+
 
 exports.default = watch;
 exports.watch = watch;
