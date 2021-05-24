@@ -2,6 +2,10 @@
 
 This is a template for typical projects that are generated automatically by the GULP (NodeJS).
 
+This Gulp-template script automatically generates SVG-sprites to bitmap, converts fonts from TTF/OTF to WOFF/WOFF2, converts from SCSS/SASS to CSS-style, optimize CSS-styles, merges and minifies CSS-styles, merges and minifies JavaScripts. And also, gives the ability to edit in a live browser.
+
+
+
 Before starting, need to install the packages under console 
 >  \> npm i
 
