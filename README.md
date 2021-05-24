@@ -53,7 +53,7 @@ Add all fonts from folder `./app/fonts/` to `./app/scss/fonts.scss`
 
 > \> gulp fontsCSS
 
-## Edit Road Map
+## Getting Started
 
 *Clone repo:*
 
