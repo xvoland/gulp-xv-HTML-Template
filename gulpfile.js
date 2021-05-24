@@ -52,7 +52,7 @@ let { src, dest } = require("gulp"),
     clean_css = require("gulp-clean-css"),
     rename = require("gulp-rename"),
     uglify = require("gulp-uglify-es").default,         // or uglify
-    image_min = require("gulp-imagemin"),
+    imagemin = require("gulp-imagemin"),
     webp = require("gulp-webp"),                        // webp
     webp_html = require("gulp-webp-html"),
     webp_css = require("gulp-webp-css"),
@@ -149,8 +149,9 @@ function images() {
         .pipe(dest(path.src.img))               // return to other images
         .pipe(image_min({
                 progressive: true,
-                svgoPlugins: [{ removeViewBox: false }],
-                optimizationLevel: 3            // from 0 to 7
+                interlaced: true,
+                svgoPlugins: [{ removeViewBox: true }],
+                optimizationLevel: 4            // from 0 to 7
             })
         )
         .pipe(dest(path.build.img))
