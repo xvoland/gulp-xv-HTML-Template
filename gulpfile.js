@@ -84,7 +84,8 @@ function html() {
         .pipe(filesinclude())               // include templates for gulp
         .pipe(minify_inline())              // minifies inline JS and CSS
         .pipe(webp_html())
-        .pipe(htmlmin({
+        .pipe(dest(path.build.html))
+        .pipe(htmlmin({                     // compressed version of HTML
             collapseWhitespace: true,
             removeComments: true,
             removeCommentsFromCDATA: true,
@@ -92,6 +93,11 @@ function html() {
             removeEmptyElements: true,
             collapseBooleanAttributes: true
         }))
+        .pipe(
+            rename({
+                extname: ".min.html"
+            })
+        )
         .pipe(dest(path.build.html))
         .pipe(browsersync.stream())         // update live sync
 }
