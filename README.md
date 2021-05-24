@@ -85,6 +85,6 @@ The project has been created. Edit files...
 
 > \> gulp
 
-**Enjoy editing with Live Update Browser**
+**Enjoy editing with Live Update Browser http://localhost:3000**
 
 © 2021, Copyrights Vitalii Tereshchuk at https://dotoca.net
