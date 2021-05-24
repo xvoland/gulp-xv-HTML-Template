@@ -174,7 +174,7 @@ async function css_console() {
   var result = sass.renderSync({
     file: path.src.css,
     outputStyle: "compressed",
-    outFile: path.build."all.css",
+    outFile: path.build + "all.css",
   });
 
   console.log(result.css.toString());
@@ -260,6 +260,4 @@ exports.js = js;
 exports.fonts = fonts;
 exports.fontsCSS = fontsCSS;
 
-exports.css_dart = css_dart;
 exports.css_console = css_console;
-exports.minify = minify;
