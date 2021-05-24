@@ -4,7 +4,7 @@
 /*!
 * gulpfile.js
 *
-* Copyright 2021, Vitalii Tereshchuk https://dotoca.com
+* © Copyright 2021, Vitalii Tereshchuk https://dotoca.com
 * Released under the MIT license
 * Github https://github.com/xvoland/Gulp-HTML-Template
 *
