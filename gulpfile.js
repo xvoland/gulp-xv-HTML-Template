@@ -48,6 +48,7 @@ let { src, dest } = require("gulp"),
     sass = require("gulp-dart-sass"),
     minify_inline = require("gulp-minify-inline"),
     autoprefixer = require("gulp-autoprefixer"),
+    htmlmin = require("gulp-htmlmin"),
     group_css_media = require("gulp-group-css-media-queries"),
     clean_css = require("gulp-clean-css"),
     rename = require("gulp-rename"),
@@ -83,6 +84,14 @@ function html() {
         .pipe(filesinclude())               // include templates for gulp
         .pipe(minify_inline())              // minifies inline JS and CSS
         .pipe(webp_html())
+        .pipe(htmlmin({
+            collapseWhitespace: true,
+            removeComments: true,
+            removeCommentsFromCDATA: true,
+            removeEmptyAttributes: true,
+            removeEmptyElements: true,
+            collapseBooleanAttributes: true
+        }))
         .pipe(dest(path.build.html))
         .pipe(browsersync.stream())         // update live sync
 }
@@ -147,11 +156,10 @@ function images() {
         )
         .pipe(dest(path.build.img))             // create webp images
         .pipe(dest(path.src.img))               // return to other images
-        .pipe(image_min({
+        .pipe(imagemin({
                 progressive: true,
-                interlaced: true,
-                svgoPlugins: [{ removeViewBox: true }],
-                optimizationLevel: 4            // from 0 to 7
+                svgoPlugins: [{ removeViewBox: false }],
+                optimizationLevel: 3            // from 0 to 7
             })
         )
         .pipe(dest(path.build.img))

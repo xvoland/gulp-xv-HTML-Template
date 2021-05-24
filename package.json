@@ -1,12 +1,12 @@
 {
-  "name": "Gulp HTML Template",
+  "name": "w.dottedbuy.com",
   "version": "1.0.0",
-  "description": "Gulp-HTML-Template",
+  "description": "",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Vitalii Tereshchuk",
+  "author": "",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.2.5",
@@ -15,11 +15,15 @@
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssmin": "^0.2.0",
     "gulp-dart-sass": "^1.0.2",
     "gulp-file-include": "^2.3.0",
     "gulp-fonter": "^0.3.0",
     "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-htmlmin": "^5.0.1",
     "gulp-imagemin": "^7.1.0",
+    "gulp-minifier": "^3.5.0",
     "gulp-minify-inline": "^1.1.0",
     "gulp-notify": "^4.0.0",
     "gulp-rename": "^2.0.0",
