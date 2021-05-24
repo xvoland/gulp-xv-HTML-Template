@@ -52,3 +52,39 @@ To generate sprites from folder `./app/images/`
 Add all fonts from folder `./app/fonts/` to `./app/scss/fonts.scss`
 
 > \> gulp fontsCSS
+
+## Edit Road Map
+
+*Clone repo:*
+
+> \> git clone https://github.com/xvoland/Gulp-HTML-Template.git
+
+*Install Packages:*
+
+> \> npm i
+
+
+
+The project has been created. Edit files...
+
+
+
+*Copy Fonts files to* `./app/fonts/`
+
+*Copy SVG files to* `./app/icons/`
+
+*Generate Sprite image:*
+
+> \> gulp svgSprite
+
+*Generate Fonts CSS:*
+
+> \> gulp fontsCSS
+
+*Run Gulp:*
+
+> \> gulp
+
+**Enjoy editing with Live Update Browser**
+
+© 2021, Copyrights Vitalii Tereshchuk at https://dotoca.net
