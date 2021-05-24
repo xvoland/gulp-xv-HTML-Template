@@ -13,13 +13,13 @@ Before starting, need to install the packages under console
 ```
 ./app
 	/fonts
-		*.ttf or *.otf
+		└──*.ttf or *.otf
 	/icons
-		*.svg
+		└──*.svg
 	/images
 	/js
 	/scss
-		*.scss
+		└──*.scss
 		
 	index.html
 	
@@ -31,21 +31,21 @@ package.json
 **Output project structure:**
 ```
 ./(project_folder_name)
-	/css
-		style.css
-		style.min.css
+	└──/css
+			style.css
+			style.min.css
 		
-	/fonts
-		*.woff
-		*.woff2
+	└──/fonts
+			*.woff
+			*.woff2
 		
-	/js
-		lazysize.js
-		lazysize.min.js
-		main.js
-		main.min.js
+	└──/js
+			lazysize.js
+			lazysize.min.js
+			main.js
+			main.min.js
 		
-	/images
+	└──/images
 	
 	index.html
 ```
