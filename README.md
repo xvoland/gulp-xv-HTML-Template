@@ -13,13 +13,13 @@ Before starting, need to install the packages under console
 ```
 ./app
 	/fonts
-		└──*.ttf or *.otf
+		└── *.ttf or *.otf
 	/icons
-		└──*.svg
+		└── *.svg
 	/images
 	/js
 	/scss
-		└──*.scss
+		└── *.scss
 		
 	index.html
 	
