@@ -22,21 +22,21 @@ let path = {
         html:  project_folder + "/",
         css:   project_folder + "/css/",
         js:    project_folder + "/js/",
-        img:   project_folder + "/img/",
+        img:   project_folder + "/images/",
         fonts: project_folder + "/fonts/",
     },
     src: {
         html: [source_folder + "/*.html", "!" + source_folder + "/_*.html"],
         css: source_folder + "/scss/style.scss",
         js: [source_folder + "/js/**/*.js", "!" + source_folder + "/js/**/_*.js"],
-        img: source_folder + "/img/**/*.{jpg, png, svg, gif, ico, webp}",
+        img: source_folder + "/images/**/*.{jpg, png, svg, gif, ico, webp}",
         fonts: source_folder + "/fonts/*.ttf",
     },
     watch: {
         html: source_folder + "/**/*.html",
         css: source_folder + "/scss/style.scss",
         js: source_folder + "/js/**/*.js",
-        img: source_folder + "/img/**/*.{jpg, png, svg, gif, ico, webp}",
+        img: source_folder + "/images/**/*.{jpg, png, svg, gif, ico, webp}",
     }
 };
 
@@ -55,7 +55,7 @@ let { src, dest } = require("gulp"),
     uglify = require("gulp-uglify-es").default,         // or uglify
     imagemin = require("gulp-imagemin"),
     webp = require("gulp-webp"),                        // webp
-    webp_html = require("gulp-webp-html-fix"),
+    webp_html = require("gulp-xv-webp-html"),
     webp_css = require("gulp-webp-css"),
     svg_sprite = require("gulp-svg-sprite"),
     ttf2woff = require("gulp-ttf2woff"),                // fonts
