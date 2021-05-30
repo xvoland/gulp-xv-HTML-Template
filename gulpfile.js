@@ -272,6 +272,7 @@ exports.build = build;
 exports.html = html;
 exports.css = css;
 exports.js = js;
+exports.images = images;
 exports.fonts = fonts;
 exports.fontsCSS = fontsCSS;
 
