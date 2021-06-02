@@ -162,12 +162,17 @@ function images() {
         )
         .pipe(dest(path.build.img))             // create webp images
         .pipe(dest(path.src.img))               // return to other images
-        .pipe(imagemin({
-                progressive: true,
-                svgoPlugins: [{ removeViewBox: false }],
-                optimizationLevel: 3            // from 0 to 7
+        .pipe(imagemin([
+            imagemin.gifsicle({interlaced: true}),
+            imagemin.mozjpeg({quality: 85, progressive: true}),
+            imagemin.optipng({optimizationLevel: 3}),
+            imagemin.svgo({
+                plugins: [
+                    {removeViewBox: true},
+                    {cleanupIDs: false}
+                ]
             })
-        )
+        ]))
         .pipe(dest(path.build.img))
         .pipe(browsersync.stream())             // update live sync
 }
