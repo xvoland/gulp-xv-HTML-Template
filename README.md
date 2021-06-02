@@ -1,4 +1,4 @@
-# Gulp-HTML-Template
+# Gulp-xv-HTML-Template
 
 This is a template for typical projects that are generated automatically by the [Gulp](https://gulpjs.com/) (Node.js).
 
