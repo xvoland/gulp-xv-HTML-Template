@@ -10,8 +10,8 @@ This is Gulp-template script automatically:
 * merges and minifies CSS-styles
 * using templates in JavaScript `@@include('_filename.js')`
 * merges and minifies JavaScripts
-* generates SVG-sprites to bitmap
-* create WEBP images and replace `<img>` tag to `<picture>`
+* optimize SVG-sprites
+* create WEBP images and replace `<img>` tag to `<picture>` (optional)
 * converts fonts from `TTF/OTF` to `WOFF/WOFF2`
 
 and also, gives the ability to edit in a live browser.
