@@ -116,6 +116,10 @@ The project has been created. Edit files...
 
 **Enjoy editing with Live Update Browser http://localhost:3000**
 
+## TODO
+
+* [ ]  create a new/update this template project for PostCSS
+
 # Support and Donation
 
 I’ll continue to work and improve the script features regardless of the outcome of funding, because it's rewarding to see that people are using it and it does the job for them. Still I would appreciate your support in covering some of the expenses with the domain hosting and programming hours which are taken from my family time.
