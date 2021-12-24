@@ -13,6 +13,7 @@ This is Gulp-template script automatically:
 * optimize SVG-sprites
 * create WEBP images and replace `<img>` tag to `<picture>` (optional with [gulp-xv-webp](https://www.npmjs.com/package/gulp-xv-webp-html))
 * converts fonts from `TTF/OTF` to `WOFF/WOFF2`
+* SCSS - @mixin adptFonts() - dynamically changing the font-size for small screens (mobile phones)
 
 and also, gives the ability to edit in a live browser.
 
@@ -114,6 +115,16 @@ The project has been created. Edit files...
 ```
 
 **Enjoy editing with Live Update Browser http://localhost:3000**
+
+## Mixins
+### adptFonts(<Screen Size>, <Mobile Size>)
+
+`Screen Size` - default font size for desktop
+`Mobile Size` - target font size for small screens
+
+```SCSS
+@include adptFonts(24, 18);
+```
 
 ## TODO
 
