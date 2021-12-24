@@ -10,3 +10,30 @@
 
 @import "fonts";
 
+
+
+/*
+    @mixin adptFonts() - dynamically changing the font-size for small screens (mobile phones)
+        ScreenSize - default font size (desktop)
+        MobileSize - target small size of fonts (mobile)
+
+    USE:
+        @include adptFonts(16, 12)
+            default size 16px, required font for small devices 12px
+*/
+
+$ScreenWidth: 1280;         // original screen size (Desktop)
+
+@mixin adptFonts($ScreenSize, $MobileSize) {
+
+    $steps: $ScreenSize - $MobileSize;
+    $ratio: ($steps * 0.7) + $steps;
+
+    @media (max-width: 767px) {
+        font-size: calc(#{$MobileSize + px} + #{$ratio} * ((100vw - 320px) / #{$ScreenWidth}));
+    }
+
+    @media (min-width: 767px) {
+        font-size: calc(#{$MobileSize + px} + #{$ratio} * ((100vw / #{$ScreenWidth})));
+    }
+}
