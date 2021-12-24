@@ -122,6 +122,7 @@ The project has been created. Edit files...
 ### adptFonts(`<Screen Size>`, `<Mobile Size>`)
 
 `Screen Size` - default font size for desktop
+
 `Mobile Size` - target font size for small screens
 
 ```SCSS
