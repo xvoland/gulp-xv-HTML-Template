@@ -119,7 +119,7 @@ The project has been created. Edit files...
 **Enjoy editing with Live Update Browser http://localhost:3000**
 
 ## Mixins
-### adptFonts(<Screen Size>, <Mobile Size>)
+### adptFonts(`<Screen Size>`, `<Mobile Size>`)
 
 `Screen Size` - default font size for desktop
 `Mobile Size` - target font size for small screens
