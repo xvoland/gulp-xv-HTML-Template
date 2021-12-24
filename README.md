@@ -15,10 +15,12 @@ This is Gulp-template script automatically:
 * converts fonts from `TTF/OTF` to `WOFF/WOFF2`
 * SCSS - @mixin adptFonts() - dynamically changing the font-size for small screens (mobile phones)
 
-and also, gives the ability to edit in a live browser.
+*and also, gives the ability to edit in a live browser.*
 
 
-Before starting, need to install the packages under console 
+## Install
+
+Before starting, need to install the packages under console in the root of project
 ```bash
 > npm i
 ```
